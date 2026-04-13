@@ -22,3 +22,15 @@ conda activate rag-project
 pip install -r requirements.txt
 ```
 Add your OpenAI key to a `.env` file:
+
+OPENAI_API_KEY=sk-...
+
+Then run:
+```bash
+python rag_basic.py
+```
+## Project status
+- [x] Week 1: working end-to-end pipeline with Gradio UI
+- [ ] Week 2: improved retrieval — reranker, hybrid search, memory
+- [ ] Week 3: evaluation pipeline with RAGAS
+- [ ] Week 4: FastAPI serving, Docker, deployment
