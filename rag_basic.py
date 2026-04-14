@@ -5,6 +5,7 @@ from langchain_community.document_loaders import PyPDFLoader
 from langchain_openai import ChatOpenAI
 from langchain_core.prompts import ChatPromptTemplate
 from sentence_transformers import CrossEncoder
+from rank_bm25 import BM25Okapi
 from dotenv import load_dotenv
 import gradio as gr
 import time
@@ -63,31 +64,33 @@ else:
 
 print("Vector store ready\n")
 
-# debug — search for employee count directly
-test = vectorstore.similarity_search("approximately 36000 employees 38 countries", k=1)
-print(repr(test[0].page_content))
-for i, doc in enumerate(test):
-    print(f"[{i+1}] Page {doc.metadata.get('page', '?')+1}: {doc.page_content[:150]}")
-print("---")
+# --- build BM25 sparse index
+print("Building BM25 index...")
+chunk_texts = [doc.page_content for doc in chunks]
+tokenized_chunks = [text.lower().split() for text in chunk_texts]
+bm25 = BM25Okapi(tokenized_chunks)
+print("BM25 index ready")
+
 
 # --- LLM and prompt
 
 llm = ChatOpenAI(model="gpt-3.5-turbo", temperature=0)
 
 prompt = ChatPromptTemplate.from_template("""
-You are a knowledgeable financial analyst assistant with deep expertise 
-in technology companies. You answer questions about NVIDIA based on their 
-official filings and reports.
+You are a knowledgeable assistant with expertise in both technology companies 
+and sports regulations. You answer questions based strictly on two documents:
+1. NVIDIA's official annual report (10-K) for fiscal year 2025
+2. FIBA Official Basketball Rules 2024
 
 Guidelines:
 - Be conversational and clear, not robotic
 - Structure longer answers with short paragraphs
-- When citing numbers or facts, mention they come from the document
-- If the answer is not in the context, say "I don't have that information 
-  in the provided documents"
+- When citing numbers or facts, always mention which document they come from
+- Always attribute basketball rules to "FIBA Official Basketball Rules 2024", never to NBA
+- If the answer is not in the context, say "I don't have that information in the provided documents"
 - Keep answers concise unless the question needs detail
-- In the begginig of an answer, answer fluently. No need openings
-like "Answer:" or "Asistant:"
+- Never open with labels like "Answer:" or "Assistant:"
+- Never add information from your own knowledge, only use the provided context
 
 Context:
 {context}
@@ -100,18 +103,30 @@ Question: {question}
 
 # --- RAG function
 def ask(question, history):
-    # step 1: retrieve more candidates than needed
-    retrieved_chunks = vectorstore.similarity_search(question, k=10)
+    # --- dense retrieval
+    dense_chunks = vectorstore.similarity_search(question, k=10)
     
-    # step 2: rerank with cross-encoder
-    pairs = [[question, doc.page_content] for doc in retrieved_chunks]
+    # --- sparse BM25 retrieval
+    tokenized_query = question.lower().split()
+    bm25_scores = bm25.get_scores(tokenized_query)
+    top_bm25_indices = sorted(range(len(bm25_scores)), key=lambda i: bm25_scores[i], reverse=True)[:10]
+    sparse_chunks = [chunks[i] for i in top_bm25_indices]
+    
+    # --- combine and deduplicate
+    seen = set()
+    combined = []
+    for doc in dense_chunks + sparse_chunks:
+        key = doc.page_content[:50]
+        if key not in seen:
+            seen.add(key)
+            combined.append(doc)
+    
+    # --- rerank combined results
+    pairs = [[question, doc.page_content] for doc in combined]
     scores = reranker.predict(pairs)
-    
-    # step 3: sort by reranker score and keep top 3
-    ranked = sorted(zip(scores, retrieved_chunks), key=lambda x: x[0], reverse=True)
+    ranked = sorted(zip(scores, combined), key=lambda x: x[0], reverse=True)
     top_chunks = [doc for _, doc in ranked[:3]]
     
-    # step 4: build context from reranked chunks
     context = "\n\n".join([doc.page_content for doc in top_chunks])
     
     history_text = ""
