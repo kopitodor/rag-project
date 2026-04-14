@@ -4,17 +4,33 @@ from langchain_community.embeddings import HuggingFaceEmbeddings
 from langchain_community.document_loaders import PyPDFLoader
 from langchain_openai import ChatOpenAI
 from langchain_core.prompts import ChatPromptTemplate
+from sentence_transformers import CrossEncoder
 from dotenv import load_dotenv
 import gradio as gr
 import time
 import os
+from pathlib import Path
+
 
 load_dotenv()
 
-# --- load and clean the PDF
-print("Loading PDF...")
-loader = PyPDFLoader("document.pdf")
-pages = loader.load()
+# --- load multiple PDFs
+print("Loading PDFs...")
+
+pdf_files = list(Path(".").glob("*.pdf"))
+print(f"Found {len(pdf_files)} PDFs: {[f.name for f in pdf_files]}")
+
+pages = []
+for pdf_file in pdf_files:
+    loader = PyPDFLoader(str(pdf_file))
+    doc_pages = loader.load()
+    # add filename to metadata so we know which doc each chunk came from
+    for page in doc_pages:
+        page.metadata["source"] = pdf_file.name
+    pages.extend(doc_pages)
+    print(f"Loaded {pdf_file.name}: {len(doc_pages)} pages")
+
+print(f"Total pages loaded: {len(pages)}")
 
 # clean up spacing issues from PDF extraction
 for page in pages:
@@ -34,6 +50,7 @@ print(f"Created {len(chunks)} chunks")
 # --- embed and build vector store
 print("Loading embedding model...")
 embeddings = HuggingFaceEmbeddings(model_name="BAAI/bge-large-en-v1.5")
+reranker = CrossEncoder("cross-encoder/ms-marco-MiniLM-L-6-v2")
 
 if os.path.exists("faiss_index"):
     print("Loading vector store from disk...")
@@ -83,8 +100,19 @@ Question: {question}
 
 # --- RAG function
 def ask(question, history):
-    retrieved_chunks = vectorstore.similarity_search(question, k=5)
-    context = "\n\n".join([doc.page_content for doc in retrieved_chunks])
+    # step 1: retrieve more candidates than needed
+    retrieved_chunks = vectorstore.similarity_search(question, k=10)
+    
+    # step 2: rerank with cross-encoder
+    pairs = [[question, doc.page_content] for doc in retrieved_chunks]
+    scores = reranker.predict(pairs)
+    
+    # step 3: sort by reranker score and keep top 3
+    ranked = sorted(zip(scores, retrieved_chunks), key=lambda x: x[0], reverse=True)
+    top_chunks = [doc for _, doc in ranked[:3]]
+    
+    # step 4: build context from reranked chunks
+    context = "\n\n".join([doc.page_content for doc in top_chunks])
     
     history_text = ""
     if history:
@@ -97,9 +125,9 @@ def ask(question, history):
                 elif role == 'assistant':
                     content_clean = content.split('\n\n**Sources:**')[0]
                     history_text += f"Assistant: {content_clean}\n"
-    
+
     chain = prompt | llm
-    
+
     for attempt in range(3):
         try:
             response = chain.invoke({
@@ -108,8 +136,8 @@ def ask(question, history):
                 "history": history_text
             })
             sources = "\n\n**Sources:**\n" + "\n".join(
-                [f"- Page {doc.metadata.get('page', '?')+1}: {doc.page_content[:80]}..." 
-                 for doc in retrieved_chunks]
+                [f"- {doc.metadata.get('source', '?')} p.{doc.metadata.get('page', '?')+1}: {doc.page_content[:80]}..." 
+                 for doc in top_chunks]
             )
             return response.content + sources
         except Exception as e:
