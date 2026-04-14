@@ -1,0 +1,211 @@
+{
+  "timestamp": "20260414_192915",
+  "averages": {
+    "faithfulness": 0.695,
+    "response_relevancy": 0.927,
+    "context_precision": 0.925,
+    "context_recall": 0.95
+  },
+  "results": [
+    {
+      "question": "What was NVIDIA's total revenue for fiscal year 2025?",
+      "document": "nvidia",
+      "answer": "NVIDIA's total revenue for fiscal year 2025 was $130,497 million, as stated in NVIDIA's official annual report (10-K) for fiscal year 2025.",
+      "ground_truth": "NVIDIA's total revenue for fiscal year 2025 was $130,497 million (approximately $130.5 billion).",
+      "faithfulness": 0.5,
+      "response_relevancy": 1.0,
+      "context_precision": 1.0,
+      "context_recall": 1.0
+    },
+    {
+      "question": "What was NVIDIA's net income for fiscal year 2025?",
+      "document": "nvidia",
+      "answer": "NVIDIA's net income for fiscal year 2025 was $72,880 million, as stated in NVIDIA's official annual report (10-K) for fiscal year 2025. This represents a significant increase compared to the previous fiscal year.",
+      "ground_truth": "NVIDIA's net income for fiscal year 2025 was $72,880 million.",
+      "faithfulness": 0.333,
+      "response_relevancy": 1.0,
+      "context_precision": 1.0,
+      "context_recall": 1.0
+    },
+    {
+      "question": "What was the revenue of NVIDIA's Data Center segment in fiscal year 2025?",
+      "document": "nvidia",
+      "answer": "The revenue of NVIDIA's Data Center segment in fiscal year 2025 was $115.186 billion, as stated in NVIDIA's official annual report for fiscal year 2025. This segment saw a significant increase in revenue, up 142% from the previous year, driven by demand for the Hopper architecture accelerated computing platform used for various applications.",
+      "ground_truth": "NVIDIA's Data Center segment revenue for fiscal year 2025 was $115,186 million, up 142% from the prior year.",
+      "faithfulness": 0.5,
+      "response_relevancy": 1.0,
+      "context_precision": 1.0,
+      "context_recall": 1.0
+    },
+    {
+      "question": "What was NVIDIA's gross margin percentage in fiscal year 2025?",
+      "document": "nvidia",
+      "answer": "NVIDIA's gross margin percentage in fiscal year 2025 was 75.0%, as stated in NVIDIA's official annual report for fiscal year 2025.",
+      "ground_truth": "NVIDIA's gross margin was 75.0% in fiscal year 2025, up from 72.7% in fiscal year 2024.",
+      "faithfulness": 1.0,
+      "response_relevancy": 1.0,
+      "context_precision": 1.0,
+      "context_recall": 1.0
+    },
+    {
+      "question": "By what percentage did NVIDIA's total revenue grow from FY2024 to FY2025?",
+      "document": "nvidia",
+      "answer": "From the information provided in NVIDIA's official annual report for fiscal year 2025, the total revenue for FY2024 was $60,922 million, and for FY2025 it was $130,497 million. Therefore, NVIDIA's total revenue grew by approximately 114% from FY2024 to FY2025.",
+      "ground_truth": "NVIDIA's total revenue grew 114% from fiscal year 2024 to fiscal year 2025.",
+      "faithfulness": 1.0,
+      "response_relevancy": 0.961,
+      "context_precision": 1.0,
+      "context_recall": 0.0
+    },
+    {
+      "question": "What was NVIDIA's Gaming segment revenue in fiscal year 2025?",
+      "document": "nvidia",
+      "answer": "In fiscal year 2025, NVIDIA's Gaming segment revenue was $11,350 million, as stated in NVIDIA's official annual report for fiscal year 2025. This revenue was up 9% from the previous year, driven by sales of their Ge Force RTX 40 Series GPUs.",
+      "ground_truth": "NVIDIA's Gaming segment revenue for fiscal year 2025 was $11,350 million.",
+      "faithfulness": 0.75,
+      "response_relevancy": 1.0,
+      "context_precision": 1.0,
+      "context_recall": 1.0
+    },
+    {
+      "question": "Who is the CEO of NVIDIA?",
+      "document": "nvidia",
+      "answer": "The CEO of NVIDIA is Jen-Hsun Huang, as stated in NVIDIA's official annual report for fiscal year 2025. He co-founded the company in 1993 and has been serving as President, Chief Executive Officer, and a member of the Board of Directors since its inception.",
+      "ground_truth": "NVIDIA's CEO is Jen-Hsun Huang, also known as Jensen Huang, who co-founded the company in 1993.",
+      "faithfulness": 0.667,
+      "response_relevancy": 1.0,
+      "context_precision": 0.583,
+      "context_recall": 1.0
+    },
+    {
+      "question": "Where is NVIDIA headquartered?",
+      "document": "nvidia",
+      "answer": "NVIDIA is headquartered in Santa Clara, California, as mentioned in the NVIDIA Corporation's official annual report for fiscal year 2025.",
+      "ground_truth": "NVIDIA is headquartered in Santa Clara, California.",
+      "faithfulness": 0.667,
+      "response_relevancy": 1.0,
+      "context_precision": 1.0,
+      "context_recall": 1.0
+    },
+    {
+      "question": "What does NVIDIA's CUDA platform do?",
+      "document": "nvidia",
+      "answer": "NVIDIA's CUDA platform, as mentioned in NVIDIA's official annual report for fiscal year 2025, is a foundational programming model that runs on all NVIDIA GPUs. It accelerates the performance and eases the deployment of NVIDIA accelerated computing for various computationally intensive workloads such as AI model training and inference, data analytics, scientific computing, and 3D graphics. Additionally, CUDA includes domain-specific software libraries, SDKs, and APIs to optimize performance for different industries like healthcare, telecom, automotive, and manufacturing.",
+      "ground_truth": "CUDA is NVIDIA's parallel programming model that runs on all NVIDIA GPUs, enabling developers to use GPUs for general-purpose computing beyond graphics, including AI, data analytics, and scientific computing.",
+      "faithfulness": 1.0,
+      "response_relevancy": 0.882,
+      "context_precision": 1.0,
+      "context_recall": 1.0
+    },
+    {
+      "question": "How many shares did NVIDIA repurchase in fiscal year 2025?",
+      "document": "nvidia",
+      "answer": "NVIDIA repurchased 310 million shares of their common stock in fiscal year 2025, as stated in NVIDIA's official annual report (10-K) for fiscal year 2025.",
+      "ground_truth": "NVIDIA repurchased 310 million shares of common stock for $34.0 billion in fiscal year 2025.",
+      "faithfulness": 0.0,
+      "response_relevancy": 0.977,
+      "context_precision": 0.583,
+      "context_recall": 1.0
+    },
+    {
+      "question": "What is NVIDIA's largest business segment by revenue?",
+      "document": "nvidia",
+      "answer": "The largest business segment for NVIDIA by revenue in fiscal year 2025 was the Data Center segment, according to NVIDIA's official annual report for that year. The revenue for the Data Center segment was $115,186 million.",
+      "ground_truth": "NVIDIA's largest business segment is Compute & Networking, which includes Data Center accelerated computing platforms, AI solutions, and networking.",
+      "faithfulness": 1.0,
+      "response_relevancy": 0.895,
+      "context_precision": 1.0,
+      "context_recall": 1.0
+    },
+    {
+      "question": "What are the main market risk categories NVIDIA discloses in its 10-K?",
+      "document": "nvidia",
+      "answer": "In NVIDIA's 10-K report, the main market risk categories disclosed include investment and interest rate risk. The company is exposed to interest rate risk related to its fixed-rate investment portfolio and outstanding debt. NVIDIA manages its investment portfolio in line with its liquidity strategy to support working capital needs and business growth. As of the end of fiscal year 2025, the company conducted a sensitivity analysis on its investment portfolio to assess potential risks. (Source: NVIDIA's official annual report (10-K) for fiscal year 2025)",
+      "ground_truth": "NVIDIA discloses two main market risk categories: Investment and Interest Rate Risk, and Foreign Exchange Rate Risk.",
+      "faithfulness": 1.0,
+      "response_relevancy": 0.984,
+      "context_precision": 1.0,
+      "context_recall": 1.0
+    },
+    {
+      "question": "How many players from each team are on the court during a basketball game?",
+      "document": "fiba",
+      "answer": "In accordance with the FIBA Official Basketball Rules 2024, each basketball team consists of 5 players on the court during a game.",
+      "ground_truth": "Each team has 5 players on the court during a basketball game.",
+      "faithfulness": 1.0,
+      "response_relevancy": 0.631,
+      "context_precision": 1.0,
+      "context_recall": 1.0
+    },
+    {
+      "question": "How long is each quarter in FIBA basketball?",
+      "document": "fiba",
+      "answer": "Each quarter in FIBA basketball is 10 minutes long, as stated in the \"FIBA Official Basketball Rules 2024\".",
+      "ground_truth": "Each quarter in FIBA basketball is 10 minutes long, and a game consists of 4 quarters.",
+      "faithfulness": 1.0,
+      "response_relevancy": 1.0,
+      "context_precision": 1.0,
+      "context_recall": 1.0
+    },
+    {
+      "question": "How many seconds does a team have to attempt a shot?",
+      "document": "fiba",
+      "answer": "In accordance with the FIBA Official Basketball Rules 2024, a team must attempt a shot for a goal within 24 seconds after gaining control of a live ball on the court or during a throw-in. If the shot clock signal sounds while the ball is in the air near the end of the shot clock period, and the ball enters the basket, no violation occurs, and the goal counts. Additionally, the shot clock is reset to 14 seconds in the frontcourt and 24 seconds in the backcourt after certain situations like a time-out or a throw-in from the frontcourt.",
+      "ground_truth": "A team must attempt a shot for a goal within 24 seconds of gaining control of the ball, and the ball must leave the player's hands before the shot clock signal sounds.",
+      "faithfulness": 1.0,
+      "response_relevancy": 0.709,
+      "context_precision": 1.0,
+      "context_recall": 1.0
+    },
+    {
+      "question": "What is the three-point line distance in FIBA basketball?",
+      "document": "fiba",
+      "answer": "The three-point line distance in FIBA basketball, as per the \"FIBA Official Basketball Rules 2024\", is an arc of radius 6.75 meters measured from the point on the court beneath the exact center of the opponents' basket to the outer edge of the arc. The distance of the point on the court from the inner edge of the mid-point of the endline is 1.575 meters.",
+      "ground_truth": "The three-point line in FIBA basketball is an arc of radius 6.75 metres measured from the point on the court beneath the centre of the basket.",
+      "faithfulness": 0.75,
+      "response_relevancy": 0.933,
+      "context_precision": 0.5,
+      "context_recall": 1.0
+    },
+    {
+      "question": "How many personal fouls does it take for a player to be disqualified in FIBA basketball?",
+      "document": "fiba",
+      "answer": "In FIBA Official Basketball Rules 2024, a player is disqualified from the game after committing 5 personal fouls. Once a player reaches this limit, they must leave the game immediately.",
+      "ground_truth": "A player who commits 5 personal fouls is disqualified and must leave the game immediately.",
+      "faithfulness": 0.0,
+      "response_relevancy": 0.918,
+      "context_precision": 1.0,
+      "context_recall": 1.0
+    },
+    {
+      "question": "How many seconds does a team have to advance the ball from their backcourt to their frontcourt?",
+      "document": "fiba",
+      "answer": "In accordance with the FIBA Official Basketball Rules 2024, a team must advance the ball from their backcourt to their frontcourt within 8 seconds. This rule is in place to ensure the game flows smoothly and teams maintain possession efficiently.",
+      "ground_truth": "A team must cause the ball to go into their frontcourt within 8 seconds of gaining control of the ball in their backcourt.",
+      "faithfulness": 0.333,
+      "response_relevancy": 0.751,
+      "context_precision": 0.833,
+      "context_recall": 1.0
+    },
+    {
+      "question": "How long is the halftime interval in a FIBA basketball game?",
+      "document": "fiba",
+      "answer": "The halftime interval in a FIBA basketball game is 15 minutes, as stated in the \"FIBA Official Basketball Rules 2024\" on page 16 of 105.",
+      "ground_truth": "The halftime interval in a FIBA basketball game is 15 minutes.",
+      "faithfulness": 1.0,
+      "response_relevancy": 1.0,
+      "context_precision": 1.0,
+      "context_recall": 1.0
+    },
+    {
+      "question": "What happens when a team commits more than 4 team fouls in a quarter?",
+      "document": "fiba",
+      "answer": "When a team commits more than 4 team fouls in a quarter, according to the \"FIBA Official Basketball Rules 2024\", they enter the team foul penalty situation. This means that all following player personal fouls committed on a player not in the act of shooting will result in 2 free throws instead of a throw-in. The player who was fouled will attempt the free throws. Additionally, all team fouls committed in an interval of play are considered to be committed in the following quarter or overtime, and all team fouls in each overtime are considered to be committed in the fourth quarter.",
+      "ground_truth": "After a team commits 4 team fouls in a quarter it enters the team foul penalty situation. All subsequent personal fouls on a player not in the act of shooting are penalised by 2 free throws instead of a throw-in.",
+      "faithfulness": 0.4,
+      "response_relevancy": 0.896,
+      "context_precision": 1.0,
+      "context_recall": 1.0
+    }
+  ]
+}

@@ -1,0 +1,102 @@
+[
+  {
+    "question": "What was NVIDIA's total revenue for fiscal year 2025?",
+    "ground_truth": "NVIDIA's total revenue for fiscal year 2025 was $130,497 million (approximately $130.5 billion).",
+    "document": "nvidia"
+  },
+  {
+    "question": "What was NVIDIA's net income for fiscal year 2025?",
+    "ground_truth": "NVIDIA's net income for fiscal year 2025 was $72,880 million.",
+    "document": "nvidia"
+  },
+  {
+    "question": "What was the revenue of NVIDIA's Data Center segment in fiscal year 2025?",
+    "ground_truth": "NVIDIA's Data Center segment revenue for fiscal year 2025 was $115,186 million, up 142% from the prior year.",
+    "document": "nvidia"
+  },
+  {
+    "question": "What was NVIDIA's gross margin percentage in fiscal year 2025?",
+    "ground_truth": "NVIDIA's gross margin was 75.0% in fiscal year 2025, up from 72.7% in fiscal year 2024.",
+    "document": "nvidia"
+  },
+  {
+    "question": "By what percentage did NVIDIA's total revenue grow from FY2024 to FY2025?",
+    "ground_truth": "NVIDIA's total revenue grew 114% from fiscal year 2024 to fiscal year 2025.",
+    "document": "nvidia"
+  },
+  {
+    "question": "What was NVIDIA's Gaming segment revenue in fiscal year 2025?",
+    "ground_truth": "NVIDIA's Gaming segment revenue for fiscal year 2025 was $11,350 million.",
+    "document": "nvidia"
+  },
+  {
+    "question": "Who is the CEO of NVIDIA?",
+    "ground_truth": "NVIDIA's CEO is Jen-Hsun Huang, also known as Jensen Huang, who co-founded the company in 1993.",
+    "document": "nvidia"
+  },
+  {
+    "question": "Where is NVIDIA headquartered?",
+    "ground_truth": "NVIDIA is headquartered in Santa Clara, California.",
+    "document": "nvidia"
+  },
+  {
+    "question": "What does NVIDIA's CUDA platform do?",
+    "ground_truth": "CUDA is NVIDIA's parallel programming model that runs on all NVIDIA GPUs, enabling developers to use GPUs for general-purpose computing beyond graphics, including AI, data analytics, and scientific computing.",
+    "document": "nvidia"
+  },
+  {
+    "question": "How many shares did NVIDIA repurchase in fiscal year 2025?",
+    "ground_truth": "NVIDIA repurchased 310 million shares of common stock for $34.0 billion in fiscal year 2025.",
+    "document": "nvidia"
+  },
+  {
+    "question": "What is NVIDIA's largest business segment by revenue?",
+    "ground_truth": "NVIDIA's largest business segment is Compute & Networking, which includes Data Center accelerated computing platforms, AI solutions, and networking.",
+    "document": "nvidia"
+  },
+  {
+    "question": "What are the main market risk categories NVIDIA discloses in its 10-K?",
+    "ground_truth": "NVIDIA discloses two main market risk categories: Investment and Interest Rate Risk, and Foreign Exchange Rate Risk.",
+    "document": "nvidia"
+  },
+  {
+    "question": "How many players from each team are on the court during a basketball game?",
+    "ground_truth": "Each team has 5 players on the court during a basketball game.",
+    "document": "fiba"
+  },
+  {
+    "question": "How long is each quarter in FIBA basketball?",
+    "ground_truth": "Each quarter in FIBA basketball is 10 minutes long, and a game consists of 4 quarters.",
+    "document": "fiba"
+  },
+  {
+    "question": "How many seconds does a team have to attempt a shot?",
+    "ground_truth": "A team must attempt a shot for a goal within 24 seconds of gaining control of the ball, and the ball must leave the player's hands before the shot clock signal sounds.",
+    "document": "fiba"
+  },
+  {
+    "question": "What is the three-point line distance in FIBA basketball?",
+    "ground_truth": "The three-point line in FIBA basketball is an arc of radius 6.75 metres measured from the point on the court beneath the centre of the basket.",
+    "document": "fiba"
+  },
+  {
+    "question": "How many personal fouls does it take for a player to be disqualified in FIBA basketball?",
+    "ground_truth": "A player who commits 5 personal fouls is disqualified and must leave the game immediately.",
+    "document": "fiba"
+  },
+  {
+    "question": "How many seconds does a team have to advance the ball from their backcourt to their frontcourt?",
+    "ground_truth": "A team must cause the ball to go into their frontcourt within 8 seconds of gaining control of the ball in their backcourt.",
+    "document": "fiba"
+  },
+  {
+    "question": "How long is the halftime interval in a FIBA basketball game?",
+    "ground_truth": "The halftime interval in a FIBA basketball game is 15 minutes.",
+    "document": "fiba"
+  },
+  {
+    "question": "What happens when a team commits more than 4 team fouls in a quarter?",
+    "ground_truth": "After a team commits 4 team fouls in a quarter it enters the team foul penalty situation. All subsequent personal fouls on a player not in the act of shooting are penalised by 2 free throws instead of a throw-in.",
+    "document": "fiba"
+  }
+]
