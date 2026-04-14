@@ -20,10 +20,12 @@ annual report (10-K) and the FIBA Official Basketball Rules 2024.
 - LangChain · sentence-transformers · FAISS · BM25 · CrossEncoder · OpenAI API · Gradio · RAGAS
 
 ## Architecture
-PDFs → clean → chunk → embed (bge-large) → FAISS index (cached to disk)
-↓
-Query → dense retrieval (FAISS top-10)  ─┐
-→ sparse retrieval (BM25 top-10)  ─┴→ reranker → top-3 → LLM → answer
+```
+PDFs -> clean -> chunk -> embed (bge-large) -> FAISS index (cached to disk)
+                                    |
+Query -> dense retrieval (FAISS)  --+
+      -> sparse retrieval (BM25)  --+--> reranker -> top-3 -> LLM -> answer
+```
 
 ## Quickstart
 ```bash
