@@ -1,0 +1,211 @@
+{
+  "timestamp": "20260414_195039",
+  "averages": {
+    "faithfulness": 0.732,
+    "response_relevancy": 0.942,
+    "context_precision": 0.958,
+    "context_recall": 0.95
+  },
+  "results": [
+    {
+      "question": "What was NVIDIA's total revenue for fiscal year 2025?",
+      "document": "nvidia",
+      "answer": "NVIDIA's total revenue for fiscal year 2025 was $130,497 million, as stated in NVIDIA's official annual report (10-K) for fiscal year 2025.",
+      "ground_truth": "NVIDIA's total revenue for fiscal year 2025 was $130,497 million (approximately $130.5 billion).",
+      "faithfulness": 1.0,
+      "response_relevancy": 1.0,
+      "context_precision": 1.0,
+      "context_recall": 1.0
+    },
+    {
+      "question": "What was NVIDIA's net income for fiscal year 2025?",
+      "document": "nvidia",
+      "answer": "NVIDIA's net income for fiscal year 2025 was $72,880 million, as stated in NVIDIA's official annual report (10-K) for fiscal year 2025.",
+      "ground_truth": "NVIDIA's net income for fiscal year 2025 was $72,880 million.",
+      "faithfulness": 0.5,
+      "response_relevancy": 1.0,
+      "context_precision": 1.0,
+      "context_recall": 1.0
+    },
+    {
+      "question": "What was the revenue of NVIDIA's Data Center segment in fiscal year 2025?",
+      "document": "nvidia",
+      "answer": "The revenue of NVIDIA's Data Center segment in fiscal year 2025 was $115.186 billion, as stated in NVIDIA's official annual report for fiscal year 2025.",
+      "ground_truth": "NVIDIA's Data Center segment revenue for fiscal year 2025 was $115,186 million, up 142% from the prior year.",
+      "faithfulness": 0.0,
+      "response_relevancy": 1.0,
+      "context_precision": 1.0,
+      "context_recall": 1.0
+    },
+    {
+      "question": "What was NVIDIA's gross margin percentage in fiscal year 2025?",
+      "document": "nvidia",
+      "answer": "NVIDIA's gross margin percentage in fiscal year 2025 was 75.0%, as stated in NVIDIA's official annual report (10-K) for fiscal year 2025.",
+      "ground_truth": "NVIDIA's gross margin was 75.0% in fiscal year 2025, up from 72.7% in fiscal year 2024.",
+      "faithfulness": 1.0,
+      "response_relevancy": 1.0,
+      "context_precision": 1.0,
+      "context_recall": 1.0
+    },
+    {
+      "question": "By what percentage did NVIDIA's total revenue grow from FY2024 to FY2025?",
+      "document": "nvidia",
+      "answer": "NVIDIA's total revenue grew by 114% from fiscal year 2024 to fiscal year 2025, as per NVIDIA's official annual report for fiscal year 2025.",
+      "ground_truth": "NVIDIA's total revenue grew 114% from fiscal year 2024 to fiscal year 2025.",
+      "faithfulness": 0.0,
+      "response_relevancy": 0.963,
+      "context_precision": 1.0,
+      "context_recall": 0.0
+    },
+    {
+      "question": "What was NVIDIA's Gaming segment revenue in fiscal year 2025?",
+      "document": "nvidia",
+      "answer": "NVIDIA's Gaming segment revenue in fiscal year 2025 was $11,350 million, as stated in NVIDIA's official annual report for fiscal year 2025.",
+      "ground_truth": "NVIDIA's Gaming segment revenue for fiscal year 2025 was $11,350 million.",
+      "faithfulness": 1.0,
+      "response_relevancy": 1.0,
+      "context_precision": 1.0,
+      "context_recall": 1.0
+    },
+    {
+      "question": "Who is the CEO of NVIDIA?",
+      "document": "nvidia",
+      "answer": "The CEO of NVIDIA is Jen-Hsun Huang, as stated in NVIDIA's official annual report for fiscal year 2025.",
+      "ground_truth": "NVIDIA's CEO is Jen-Hsun Huang, also known as Jensen Huang, who co-founded the company in 1993.",
+      "faithfulness": 0.5,
+      "response_relevancy": 1.0,
+      "context_precision": 0.583,
+      "context_recall": 1.0
+    },
+    {
+      "question": "Where is NVIDIA headquartered?",
+      "document": "nvidia",
+      "answer": "NVIDIA is headquartered in Santa Clara, California, as mentioned in the NVIDIA Corporation's official annual report for fiscal year 2025.",
+      "ground_truth": "NVIDIA is headquartered in Santa Clara, California.",
+      "faithfulness": 0.667,
+      "response_relevancy": 1.0,
+      "context_precision": 1.0,
+      "context_recall": 1.0
+    },
+    {
+      "question": "What does NVIDIA's CUDA platform do?",
+      "document": "nvidia",
+      "answer": "The NVIDIA CUDA platform accelerates computing for tasks like AI model training, data analytics, scientific computing, and 3D graphics (NVIDIA's official annual report 10-K). It provides a programming model that runs on all NVIDIA GPUs and includes software libraries, SDKs, and APIs to ease deployment for computationally intensive workloads in various industries (NVIDIA's official annual report 10-K).",
+      "ground_truth": "CUDA is NVIDIA's parallel programming model that runs on all NVIDIA GPUs, enabling developers to use GPUs for general-purpose computing beyond graphics, including AI, data analytics, and scientific computing.",
+      "faithfulness": 1.0,
+      "response_relevancy": 0.764,
+      "context_precision": 1.0,
+      "context_recall": 1.0
+    },
+    {
+      "question": "How many shares did NVIDIA repurchase in fiscal year 2025?",
+      "document": "nvidia",
+      "answer": "NVIDIA repurchased 310 million shares of their common stock in fiscal year 2025, as stated in NVIDIA's official annual report (10-K) for fiscal year 2025.",
+      "ground_truth": "NVIDIA repurchased 310 million shares of common stock for $34.0 billion in fiscal year 2025.",
+      "faithfulness": 0.0,
+      "response_relevancy": 0.977,
+      "context_precision": 0.583,
+      "context_recall": 1.0
+    },
+    {
+      "question": "What is NVIDIA's largest business segment by revenue?",
+      "document": "nvidia",
+      "answer": "NVIDIA's largest business segment by revenue is the Data Center segment, as stated in the NVIDIA Corporation's official annual report for fiscal year 2025. In that year, the Data Center segment generated $115,186 million in revenue.",
+      "ground_truth": "NVIDIA's largest business segment is Compute & Networking, which includes Data Center accelerated computing platforms, AI solutions, and networking.",
+      "faithfulness": 1.0,
+      "response_relevancy": 1.0,
+      "context_precision": 1.0,
+      "context_recall": 1.0
+    },
+    {
+      "question": "What are the main market risk categories NVIDIA discloses in its 10-K?",
+      "document": "nvidia",
+      "answer": "In NVIDIA's 10-K report, the main market risk categories disclosed are investment and interest rate risk. The company is exposed to interest rate risk related to its fixed-rate investment portfolio and outstanding debt. NVIDIA manages its investment portfolio in line with its overall liquidity strategy to support working capital needs and business growth. As of the end of fiscal year 2025, NVIDIA conducted a sensitivity analysis on its investment portfolio to assess potential risks. (Source: NVIDIA's official annual report (10-K) for fiscal year 2025)",
+      "ground_truth": "NVIDIA discloses two main market risk categories: Investment and Interest Rate Risk, and Foreign Exchange Rate Risk.",
+      "faithfulness": 0.8,
+      "response_relevancy": 0.984,
+      "context_precision": 1.0,
+      "context_recall": 1.0
+    },
+    {
+      "question": "How many players from each team are on the court during a basketball game?",
+      "document": "fiba",
+      "answer": "In accordance with the FIBA Official Basketball Rules 2024, each team has 5 players on the court during a basketball game.",
+      "ground_truth": "Each team has 5 players on the court during a basketball game.",
+      "faithfulness": 1.0,
+      "response_relevancy": 0.742,
+      "context_precision": 1.0,
+      "context_recall": 1.0
+    },
+    {
+      "question": "How long is each quarter in FIBA basketball?",
+      "document": "fiba",
+      "answer": "Each quarter in FIBA basketball is 10 minutes long, as stated in \"FIBA Official Basketball Rules 2024\".",
+      "ground_truth": "Each quarter in FIBA basketball is 10 minutes long, and a game consists of 4 quarters.",
+      "faithfulness": 1.0,
+      "response_relevancy": 1.0,
+      "context_precision": 1.0,
+      "context_recall": 1.0
+    },
+    {
+      "question": "How many seconds does a team have to attempt a shot?",
+      "document": "fiba",
+      "answer": "In accordance with the FIBA Official Basketball Rules 2024, a team must attempt a shot for a goal within 24 seconds after gaining control of a live ball on the court or during a throw-in where the team remains in control of the ball. If a shot is attempted near the end of the shot clock period and the shot clock signal sounds while the ball is in the air, the shot clock shall be reset to 14 seconds if the team is in the frontcourt and 24 seconds if in the backcourt.",
+      "ground_truth": "A team must attempt a shot for a goal within 24 seconds of gaining control of the ball, and the ball must leave the player's hands before the shot clock signal sounds.",
+      "faithfulness": 1.0,
+      "response_relevancy": 0.711,
+      "context_precision": 1.0,
+      "context_recall": 1.0
+    },
+    {
+      "question": "What is the three-point line distance in FIBA basketball?",
+      "document": "fiba",
+      "answer": "The three-point line distance in FIBA basketball, as per the \"FIBA Official Basketball Rules 2024\", is an arc of radius 6.75 meters measured from the point on the court beneath the exact center of the opponents' basket to the outer edge of the arc.",
+      "ground_truth": "The three-point line in FIBA basketball is an arc of radius 6.75 metres measured from the point on the court beneath the centre of the basket.",
+      "faithfulness": 1.0,
+      "response_relevancy": 0.933,
+      "context_precision": 1.0,
+      "context_recall": 1.0
+    },
+    {
+      "question": "How many personal fouls does it take for a player to be disqualified in FIBA basketball?",
+      "document": "fiba",
+      "answer": "In FIBA Official Basketball Rules 2024, a player is disqualified from the game after committing 5 personal fouls.",
+      "ground_truth": "A player who commits 5 personal fouls is disqualified and must leave the game immediately.",
+      "faithfulness": 1.0,
+      "response_relevancy": 0.926,
+      "context_precision": 1.0,
+      "context_recall": 1.0
+    },
+    {
+      "question": "How many seconds does a team have to advance the ball from their backcourt to their frontcourt?",
+      "document": "fiba",
+      "answer": "A team has 8 seconds to advance the ball from their backcourt to their frontcourt, as stated in FIBA Official Basketball Rules 2024.",
+      "ground_truth": "A team must cause the ball to go into their frontcourt within 8 seconds of gaining control of the ball in their backcourt.",
+      "faithfulness": 0.5,
+      "response_relevancy": 0.944,
+      "context_precision": 1.0,
+      "context_recall": 1.0
+    },
+    {
+      "question": "How long is the halftime interval in a FIBA basketball game?",
+      "document": "fiba",
+      "answer": "The halftime interval in a FIBA basketball game is 15 minutes, as stated in the \"FIBA Official Basketball Rules 2024\" on page 16.",
+      "ground_truth": "The halftime interval in a FIBA basketball game is 15 minutes.",
+      "faithfulness": 1.0,
+      "response_relevancy": 1.0,
+      "context_precision": 1.0,
+      "context_recall": 1.0
+    },
+    {
+      "question": "What happens when a team commits more than 4 team fouls in a quarter?",
+      "document": "fiba",
+      "answer": "According to FIBA Official Basketball Rules 2024, when a team commits more than 4 team fouls in a quarter, they are in the team foul penalty situation. This means that all following player personal fouls committed on a player not in the act of shooting will result in 2 free throws instead of a throw-in. The player who was fouled will attempt the free throws.",
+      "ground_truth": "After a team commits 4 team fouls in a quarter it enters the team foul penalty situation. All subsequent personal fouls on a player not in the act of shooting are penalised by 2 free throws instead of a throw-in.",
+      "faithfulness": 0.667,
+      "response_relevancy": 0.898,
+      "context_precision": 1.0,
+      "context_recall": 1.0
+    }
+  ]
+}

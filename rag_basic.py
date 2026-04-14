@@ -90,7 +90,9 @@ Guidelines:
 - If the answer is not in the context, say "I don't have that information in the provided documents"
 - Keep answers concise unless the question needs detail
 - Never open with labels like "Answer:" or "Assistant:"
-- Never add information from your own knowledge, only use the provided context
+- Only make claims that are directly and explicitly stated in the context above
+- Do not add explanatory context, comparisons, or background knowledge even if true
+- If you find yourself writing something not in the context, stop and omit it
 
 Context:
 {context}
@@ -161,11 +163,69 @@ def ask(question, history):
                 time.sleep(20)
             else:
                 return f"Error: {str(e)}"
+            
+# --- clean pipeline function for eval harness
+def get_answer(question: str) -> tuple[str, list[str]]:
+    """
+    Same pipeline as ask() but returns (answer_text, context_chunks)
+    without Gradio history or Sources block appended.
+    Used by eval/run_eval.py.
+    """
+    # --- dense retrieval
+    dense_chunks = vectorstore.similarity_search(question, k=10)
+
+    # --- sparse BM25 retrieval
+    tokenized_query = question.lower().split()
+    bm25_scores = bm25.get_scores(tokenized_query)
+    top_bm25_indices = sorted(
+        range(len(bm25_scores)),
+        key=lambda i: bm25_scores[i],
+        reverse=True
+    )[:10]
+    sparse_chunks = [chunks[i] for i in top_bm25_indices]
+
+    # --- combine and deduplicate
+    seen = set()
+    combined = []
+    for doc in dense_chunks + sparse_chunks:
+        key = doc.page_content[:50]
+        if key not in seen:
+            seen.add(key)
+            combined.append(doc)
+
+    # --- rerank
+    pairs = [[question, doc.page_content] for doc in combined]
+    scores = reranker.predict(pairs)
+    ranked = sorted(zip(scores, combined), key=lambda x: x[0], reverse=True)
+    top_chunks = [doc for _, doc in ranked[:3]]
+
+    # --- generate answer
+    context = "\n\n".join([doc.page_content for doc in top_chunks])
+    chain = prompt | llm
+
+    for attempt in range(3):
+        try:
+            response = chain.invoke({
+                "context": context,
+                "question": question,
+                "history": ""
+            })
+            # return answer text + chunk texts separately
+            answer = response.content
+            contexts = [doc.page_content for doc in top_chunks]
+            return answer, contexts
+        except Exception as e:
+            if "rate_limit" in str(e).lower() and attempt < 2:
+                print(f"Rate limit hit, waiting 20 seconds...")
+                time.sleep(20)
+            else:
+                return f"Error: {str(e)}", []
 
 # --- launch Gradio UI
-print("Launching UI at http://127.0.0.1:7860")
-gr.ChatInterface(
-    fn=ask,
-    title="RAG Chatbot",
-    description="Ask anything about your document.",
-).launch()
+if __name__ == "__main__":
+    print("Launching UI at http://127.0.0.1:7860")
+    gr.ChatInterface(
+        fn=ask,
+        title="RAG Chatbot",
+        description="Ask anything about your document.",
+    ).launch()
