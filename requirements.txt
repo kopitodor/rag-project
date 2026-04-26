@@ -11,3 +11,4 @@ openai
 fastapi
 uvicorn
 gradio
+gradio>=5.0.0
