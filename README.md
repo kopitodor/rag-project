@@ -7,6 +7,7 @@ sdk: gradio
 sdk_version: 4.44.1
 app_file: rag_basic.py
 pinned: false
+python_version: 3.11
 ---
 
 # RAG Chatbot with Evaluation Pipeline
