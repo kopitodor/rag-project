@@ -1,4 +1,5 @@
 ---
+
 title: RAG Project
 emoji: 🤖
 colorFrom: blue
@@ -9,6 +10,9 @@ app_file: rag_basic.py
 pinned: false
 python_version: 3.11
 ---
+
+## 🚀 Live Demo
+[Try it on Hugging Face Spaces](https://huggingface.co/spaces/DorKopito/rag-project)
 
 # RAG Chatbot with Evaluation Pipeline
 
@@ -114,5 +118,5 @@ Results are saved to `eval/results/` as timestamped JSON files.
 ## Project status
 - [x] Week 1: end-to-end pipeline — PDF loading, FAISS, GPT-3.5, Gradio UI
 - [x] Week 2: hybrid search, reranker, multi-document, memory, disk caching
-- [x] Week 3: RAGAS eval pipeline — 20-question golden set, 4 metrics, two runs
-- [ ] Week 4: FastAPI serving, Docker, Hugging Face Spaces deployment
+- [x] Week 3: RAGAS eval pipeline — faithfulness, relevancy, precision, recall
+- [x] Week 4: FastAPI serving, Docker, Hugging Face Spaces deployment
